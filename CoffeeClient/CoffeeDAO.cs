@@ -7,145 +7,83 @@ namespace CoffeeClient
 {
     public class CoffeeDAO
     {
+        MyDBDataContext db = new MyDBDataContext(ConfigurationManager.ConnectionStrings["strCon"].ConnectionString);
+
         public List<Coffee> SelectAll()
         {
-            List<Coffee> coffees = new List<Coffee>();
-            String strCon = ConfigurationManager.ConnectionStrings["strCon"].ConnectionString;
-            SqlConnection con = new SqlConnection(strCon);
-            con.Open();
-            String strCom = "SELECT * FROM Coffee";
-            SqlCommand com = new SqlCommand(strCom, con);
-            SqlDataReader dr = com.ExecuteReader();
-            while (dr.Read())
-            {
-                Coffee coffee = new Coffee()
-                {
-                    Code = (int)dr["Code"],
-                    Name = (String)dr["Name"],
-                    Description = (String)dr["Description"],
-                    Price = (int)dr["Price"],
-                    Exp = (String)dr["Exp"],
-                    Mfg = (String)dr["Mfg"]
-                };
-                coffees.Add(coffee);
-            }
-
+            db.ObjectTrackingEnabled = false;
+            List<Coffee> coffees = db.Coffees.ToList();
             return coffees;
         }
 
         public Coffee SelectByCode(int code)
         {
-            String strCon = ConfigurationManager.ConnectionStrings["strCon"].ConnectionString;
-            SqlConnection con = new SqlConnection(strCon);
-            con.Open();
-            String strCom = "SELECT * FROM Coffee WHERE Code=@Code";
-            SqlCommand com = new SqlCommand(strCom, con);
-            com.Parameters.Add(new SqlParameter("@Code", code));
-            SqlDataReader dr = com.ExecuteReader();
-            if (dr.Read())
-            {
-                Coffee coffee = new Coffee()
-                {
-                    Code = (int)dr["Code"],
-                    Name = (String)dr["Name"],
-                    Description = (String)dr["Description"],
-                    Price = (int)dr["Price"],
-                    Exp = (String)dr["Exp"],
-                    Mfg = (String)dr["Mfg"]
-                };
-                return coffee;
-            }
-
-            return null;
+            Coffee coffee = db.Coffees.SingleOrDefault(b => b.Code == code);
+            return coffee;
         }
 
         public List<Coffee> SelectByKeyword(String keyword)
         {
-            List<Coffee> coffees = new List<Coffee>();
-            String strCon = ConfigurationManager.ConnectionStrings["strCon"].ConnectionString;
-            SqlConnection con = new SqlConnection(strCon);
-            con.Open();
-            String strCom = "SELECT * FROM Coffee WHERE Name LIKE @Keyword";
-            SqlCommand com = new SqlCommand(strCom, con);
-            com.Parameters.Add(new SqlParameter("@Keyword", "%" + keyword + "%"));
-            SqlDataReader dr = com.ExecuteReader();
-            while (dr.Read())
-            {
-                Coffee coffee = new Coffee()
-                {
-                    Code = (int)dr["Code"],
-                    Name = (String)dr["Name"],
-                    Description = (String)dr["Description"],
-                    Price = (int)dr["Price"],
-                    Exp = (String)dr["Exp"],
-                    Mfg = (String)dr["Mfg"]
-                };
-                coffees.Add(coffee);
-            }
-
+            List<Coffee> coffees = db.Coffees.Where(b => b.Name.Contains(keyword)).ToList();
             return coffees;
         }
 
-        public bool Insert(Coffee coffee)
+        public bool Insert(Coffee newCoffee)
         {
-            String strCon = ConfigurationManager.ConnectionStrings["strCon"].ConnectionString;
-            SqlConnection con = new SqlConnection(strCon);
-            con.Open();
-            String strCom = "INSERT INTO Coffee VALUES(@Name, @Description, @Price, @Exp, @Mfg)";
-            SqlCommand com = new SqlCommand(strCom, con);
-            com.Parameters.Add(new SqlParameter("@Name", coffee.Name));
-            com.Parameters.Add(new SqlParameter("@Description", coffee.Description));
-            com.Parameters.Add(new SqlParameter("@Price", coffee.Price));
-            com.Parameters.Add(new SqlParameter("@Exp", coffee.Exp));
-            com.Parameters.Add(new SqlParameter("@Mfg", coffee.Mfg));
             try
             {
-                return com.ExecuteNonQuery() > 0;
+                db.Coffees.InsertOnSubmit(newCoffee);
+                db.SubmitChanges();
+                return true;
             }
             catch
             {
                 return false;
             }
         }
-        
-        public bool Update(Coffee coffee)
+
+        public bool Update(Coffee newCoffee)
         {
-            String strCon = ConfigurationManager.ConnectionStrings["strCon"].ConnectionString;
-            SqlConnection con = new SqlConnection(strCon);
-            con.Open();
-            String strCom = "UPDATE Coffee SET Name=@Name, Description=@Description, Price=@Price, Exp=@Exp, Mfg=@Mfg";
-            SqlCommand com = new SqlCommand(strCom, con);
-            com.Parameters.Add(new SqlParameter("@Name", coffee.Name));
-            com.Parameters.Add(new SqlParameter("@Description", coffee.Description));
-            com.Parameters.Add(new SqlParameter("@Price", coffee.Price));
-            com.Parameters.Add(new SqlParameter("@Exp", coffee.Exp));
-            com.Parameters.Add(new SqlParameter("@Mfg", coffee.Mfg));
-            try
+            Coffee dbCoffee = db.Coffees.SingleOrDefault(b => b.Code == newCoffee.Code);
+            if (dbCoffee != null)
             {
-                return com.ExecuteNonQuery() > 0;
+                try
+                {
+                    dbCoffee.Name = newCoffee.Name;
+                    dbCoffee.Description = newCoffee.Description;
+                    dbCoffee.Price = newCoffee.Price;
+                    dbCoffee.Exp = newCoffee.Exp;
+                    dbCoffee.Mfg = newCoffee.Mfg;
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }
-            catch
-            {
-                return false;
-            }
+
+            return false;
         }
-        
+
         public bool Delete(int code)
         {
-            String strCon = ConfigurationManager.ConnectionStrings["strCon"].ConnectionString;
-            SqlConnection con = new SqlConnection(strCon);
-            con.Open();
-            String strCom = "DELETE FROM Coffee WHERE Code=@Code";
-            SqlCommand com = new SqlCommand(strCom, con);
-            com.Parameters.Add(new SqlParameter("@Code", code));
-            try
+            Coffee dbCoffee = db.Coffees.SingleOrDefault(b => b.Code == code);
+            if (dbCoffee != null)
             {
-                return com.ExecuteNonQuery() > 0;
+                try
+                {
+                    db.Coffees.DeleteOnSubmit(dbCoffee);
+                    db.SubmitChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }
-            catch
-            {
-                return false;
-            }
+
+            return false;
         }
     }
 }

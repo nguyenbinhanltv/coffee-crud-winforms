@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace CoffeeClient
 {
@@ -78,6 +79,7 @@ namespace CoffeeClient
             this.gridCoffee.Size = new System.Drawing.Size(379, 154);
             this.gridCoffee.TabIndex = 3;
             this.gridCoffee.CellContentClick += new DataGridViewCellEventHandler(this.gridCoffee_SelectionChanged);
+            this.gridCoffee.SelectionChanged += new System.EventHandler(this.gridCoffee_SelectionChanged);
             // 
             // btnSearch
             // 

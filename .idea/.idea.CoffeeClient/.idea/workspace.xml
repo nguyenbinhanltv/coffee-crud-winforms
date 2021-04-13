@@ -4,11 +4,27 @@
     <projectFile>CoffeeClient/CoffeeClient.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="287a88c2-f3fa-49a2-8bd7-305b274cf7bd" name="Default Changelist" comment="" />
+    <list default="true" id="287a88c2-f3fa-49a2-8bd7-305b274cf7bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoffeeClient/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoffeeClient/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CoffeeClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoffeeClient/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/CoffeeDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/CoffeeDAO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/bin/Debug/CoffeeClient.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/bin/Debug/CoffeeClient.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/bin/Debug/CoffeeClient.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/bin/Debug/CoffeeClient.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CoffeeClient/obj/Debug/CoffeeClient.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -17,13 +33,14 @@
         <option value="$PROJECT_DIR$/CoffeeClient/CoffeeForm.cs" />
         <option value="$PROJECT_DIR$/CoffeeClient/CoffeeBUS.cs" />
         <option value="$PROJECT_DIR$/CoffeeClient/Coffee.cs" />
-        <option value="$PROJECT_DIR$/CoffeeClient/CoffeeDAO.cs" />
         <option value="$PROJECT_DIR$/CoffeeClient/Form1.cs" />
         <option value="$PROJECT_DIR$/CoffeeClient/Form1.Designer.cs" />
+        <option value="$PROJECT_DIR$/CoffeeClient/CoffeeDAO.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1qmc5JuiXiI9WO8MDYSiAgtPepi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,37 +79,42 @@
       <option name="presentableId" value="Default" />
       <updated>1617688041218</updated>
       <workItem from="1617688051279" duration="10478000" />
+      <workItem from="1618326481914" duration="3648000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1617705285560">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1618328474304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617705285560" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1617705285560">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618328474304" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1618328474303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617705285560" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1617705285560">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618328474303" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1618328474303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617705285560" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1617705285560">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618328474303" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1618328474304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617705285560" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618328474304" />
     <state x="590" y="179" key="ToolboxManager" timestamp="1617695506408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="590" y="179" key="ToolboxManager/0.0.1920.1040@0.0.1920.1040" timestamp="1617695506408" />
+    <state x="1103" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1618334809259">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1103" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1618334809259" />
   </component>
 </project>
